@@ -12,18 +12,18 @@ export default function LocationsPage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden bg-charcoal py-16 text-cream sm:py-20">
-        <div className="absolute -left-20 -top-20 size-72 rounded-full bg-fire/20 blur-3xl" />
+      <section className="relative overflow-hidden bg-ink py-16 text-cream sm:py-20">
+        <div className="absolute -left-20 -top-20 size-72 rounded-full bg-jade/20 blur-3xl" />
         <div className="relative mx-auto max-w-5xl px-5 text-center sm:px-8">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
             <MapPin className="size-3.5" /> {locations.length} Locations
           </span>
           <h1 className="font-display text-balance text-4xl font-bold sm:text-5xl">
-            One cloud kitchen in Dubai. Twelve branches across Gujarat.
+            One cloud kitchen in LA. Twelve branches across California.
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-cream/70">
-            Order delivery anywhere in Dubai, or walk into a dine-in branch across{" "}
-            {cities.length - 1} Gujarat cities.
+            Order delivery anywhere in Los Angeles, or walk into a dine-in branch
+            across {cities.length - 1} California cities.
           </p>
         </div>
       </section>
@@ -34,8 +34,8 @@ export default function LocationsPage() {
             onClick={() => setCityFilter("all")}
             className={`shrink-0 rounded-full border px-4 py-1.5 text-sm font-semibold transition-colors ${
               cityFilter === "all"
-                ? "border-fire bg-fire text-cream"
-                : "border-black/10 bg-white text-foreground/70 hover:border-fire/40 hover:text-fire"
+                ? "border-jade bg-jade text-cream"
+                : "border-black/10 bg-white text-foreground/70 hover:border-jade/40 hover:text-jade"
             }`}
           >
             All Cities
@@ -46,8 +46,8 @@ export default function LocationsPage() {
               onClick={() => setCityFilter(city)}
               className={`shrink-0 rounded-full border px-4 py-1.5 text-sm font-semibold transition-colors ${
                 cityFilter === city
-                  ? "border-fire bg-fire text-cream"
-                  : "border-black/10 bg-white text-foreground/70 hover:border-fire/40 hover:text-fire"
+                  ? "border-jade bg-jade text-cream"
+                  : "border-black/10 bg-white text-foreground/70 hover:border-jade/40 hover:text-jade"
               }`}
             >
               {city}
@@ -69,14 +69,14 @@ export default function LocationsPage() {
                     className="mb-2 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide"
                     style={
                       loc.isOnlineOnly
-                        ? { color: "#b8862f", backgroundColor: "#d6a24a22" }
-                        : { color: "#e0451c", backgroundColor: "#e0451c1a" }
+                        ? { color: "#8a6f1a", backgroundColor: "#c9a22722" }
+                        : { color: "#0a5d45", backgroundColor: "#0e7a5c1a" }
                     }
                   >
                     {loc.isOnlineOnly ? <Truck className="size-3" /> : <UtensilsCrossed className="size-3" />}
                     {loc.tag}
                   </span>
-                  <h3 className="font-display text-lg font-bold text-charcoal">{loc.name}</h3>
+                  <h3 className="font-display text-lg font-bold text-ink">{loc.name}</h3>
                   <p className="text-xs font-semibold uppercase tracking-wide text-foreground/45">
                     {loc.city}, {loc.country}
                   </p>
@@ -85,17 +85,17 @@ export default function LocationsPage() {
 
               <div className="mt-1 space-y-2.5 text-sm text-foreground/65">
                 <p className="flex items-start gap-2">
-                  <MapPin className="mt-0.5 size-4 shrink-0 text-fire" />
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-jade" />
                   {loc.address}
                 </p>
                 <p className="flex items-center gap-2">
-                  <Phone className="size-4 shrink-0 text-fire" />
-                  <a href={`tel:${loc.phone.replace(/\s+/g, "")}`} className="hover:text-fire">
+                  <Phone className="size-4 shrink-0 text-jade" />
+                  <a href={`tel:${loc.phone.replace(/[^\d+]/g, "")}`} className="hover:text-jade">
                     {loc.phone}
                   </a>
                 </p>
                 <p className="flex items-center gap-2">
-                  <Clock className="size-4 shrink-0 text-fire" />
+                  <Clock className="size-4 shrink-0 text-jade" />
                   {loc.hours}
                 </p>
               </div>

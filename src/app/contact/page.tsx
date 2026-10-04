@@ -21,7 +21,7 @@ export default function ContactPage() {
 
   return (
     <div>
-      <section className="bg-charcoal py-14 text-center text-cream sm:py-16">
+      <section className="bg-ink py-14 text-center text-cream sm:py-16">
         <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
           <Mail className="size-3.5" /> Get in Touch
         </span>
@@ -37,41 +37,41 @@ export default function ContactPage() {
       <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <h2 className="font-display text-xl font-bold text-charcoal">Contact details</h2>
+            <h2 className="font-display text-xl font-bold text-ink">Contact details</h2>
             <div className="mt-5 space-y-5">
               <div className="flex items-start gap-3">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-fire/10 text-fire">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-jade/10 text-jade">
                   <MapPin className="size-4" />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-charcoal">Head Office</p>
+                  <p className="text-sm font-semibold text-ink">Head Office</p>
                   <p className="text-sm text-foreground/60">
-                    Warehouse 12, Al Quoz Industrial Area 3, Dubai, UAE
+                    Arts District, Los Angeles, CA
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-fire/10 text-fire">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-jade/10 text-jade">
                   <Phone className="size-4" />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-charcoal">Phone</p>
-                  <a href="tel:+97145550192" className="text-sm text-foreground/60 hover:text-fire">
-                    +971 4 555 0192
+                  <p className="text-sm font-semibold text-ink">Phone</p>
+                  <a href="tel:+12135550142" className="text-sm text-foreground/60 hover:text-jade">
+                    +1 (213) 555-0142
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-fire/10 text-fire">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-jade/10 text-jade">
                   <Mail className="size-4" />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-charcoal">Email</p>
+                  <p className="text-sm font-semibold text-ink">Email</p>
                   <a
-                    href="mailto:hello@wokonfire.example"
-                    className="text-sm text-foreground/60 hover:text-fire"
+                    href="mailto:hello@cantonkitchen.example"
+                    className="text-sm text-foreground/60 hover:text-jade"
                   >
-                    hello@wokonfire.example
+                    hello@cantonkitchen.example
                   </a>
                 </div>
               </div>
@@ -81,14 +81,14 @@ export default function ContactPage() {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="flex size-10 items-center justify-center rounded-full border border-black/10 text-foreground/60 hover:border-fire hover:text-fire"
+                className="flex size-10 items-center justify-center rounded-full border border-black/10 text-foreground/60 hover:border-jade hover:text-jade"
               >
                 <FaInstagram className="size-4" />
               </a>
               <a
                 href="#"
                 aria-label="Facebook"
-                className="flex size-10 items-center justify-center rounded-full border border-black/10 text-foreground/60 hover:border-fire hover:text-fire"
+                className="flex size-10 items-center justify-center rounded-full border border-black/10 text-foreground/60 hover:border-jade hover:text-jade"
               >
                 <FaFacebook className="size-4" />
               </a>
@@ -98,10 +98,10 @@ export default function ContactPage() {
           <div className="lg:col-span-3">
             {submitted ? (
               <div className="flex h-full flex-col items-center justify-center rounded-2xl border border-black/8 bg-white p-10 text-center">
-                <span className="mb-4 flex size-14 items-center justify-center rounded-full bg-fire/10 text-fire">
+                <span className="mb-4 flex size-14 items-center justify-center rounded-full bg-jade/10 text-jade">
                   <CheckCircle2 className="size-7" />
                 </span>
-                <h3 className="font-display text-lg font-bold text-charcoal">
+                <h3 className="font-display text-lg font-bold text-ink">
                   Message sent
                 </h3>
                 <p className="mt-2 max-w-sm text-sm text-foreground/60">
@@ -110,7 +110,7 @@ export default function ContactPage() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-charcoal hover:border-fire hover:text-fire"
+                  className="mt-6 rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-ink hover:border-jade hover:text-jade"
                 >
                   Send another message
                 </button>
@@ -122,8 +122,8 @@ export default function ContactPage() {
               >
                 <div className="grid gap-5 sm:grid-cols-2">
                   <label className="block">
-                    <span className="mb-1.5 block text-sm font-semibold text-charcoal">
-                      Name <span className="text-fire">*</span>
+                    <span className="mb-1.5 block text-sm font-semibold text-ink">
+                      Name <span className="text-jade">*</span>
                     </span>
                     <input
                       required
@@ -131,12 +131,12 @@ export default function ContactPage() {
                       value={form.name}
                       onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                       placeholder="Your name"
-                      className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-fire"
+                      className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-jade"
                     />
                   </label>
                   <label className="block">
-                    <span className="mb-1.5 block text-sm font-semibold text-charcoal">
-                      Email <span className="text-fire">*</span>
+                    <span className="mb-1.5 block text-sm font-semibold text-ink">
+                      Email <span className="text-jade">*</span>
                     </span>
                     <input
                       required
@@ -144,13 +144,13 @@ export default function ContactPage() {
                       value={form.email}
                       onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                       placeholder="you@example.com"
-                      className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-fire"
+                      className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-jade"
                     />
                   </label>
                 </div>
                 <label className="block">
-                  <span className="mb-1.5 block text-sm font-semibold text-charcoal">
-                    Subject <span className="text-fire">*</span>
+                  <span className="mb-1.5 block text-sm font-semibold text-ink">
+                    Subject <span className="text-jade">*</span>
                   </span>
                   <input
                     required
@@ -158,12 +158,12 @@ export default function ContactPage() {
                     value={form.subject}
                     onChange={(e) => setForm((f) => ({ ...f, subject: e.target.value }))}
                     placeholder="What's this about?"
-                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-fire"
+                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-jade"
                   />
                 </label>
                 <label className="block">
-                  <span className="mb-1.5 block text-sm font-semibold text-charcoal">
-                    Message <span className="text-fire">*</span>
+                  <span className="mb-1.5 block text-sm font-semibold text-ink">
+                    Message <span className="text-jade">*</span>
                   </span>
                   <textarea
                     required
@@ -171,13 +171,13 @@ export default function ContactPage() {
                     value={form.message}
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                     placeholder="Tell us a bit more..."
-                    className="w-full resize-none rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-fire"
+                    className="w-full resize-none rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-jade"
                   />
                 </label>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full rounded-full bg-fire py-3 text-sm font-semibold text-cream shadow-lg shadow-fire/30 transition-colors hover:bg-fire-dark disabled:cursor-not-allowed disabled:opacity-60"
+                  className="w-full rounded-full bg-jade py-3 text-sm font-semibold text-cream shadow-lg shadow-jade/30 transition-colors hover:bg-jade-dark disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {submitting ? "Sending…" : "Send message"}
                 </button>

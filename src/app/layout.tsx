@@ -17,9 +17,9 @@ const display = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Wok On Fire — Pan-Asian, Wok-Fired Cuisine",
+  title: "Canton Kitchen — Pan-Asian, Wok-Tossed Cuisine",
   description:
-    "Wok On Fire — pan-Asian wok-fired cuisine across Dubai and Gujarat. Dine in, order delivery, or book a table online.",
+    "Canton Kitchen — pan-Asian, wok-tossed cuisine across California. Dine in, order delivery, or book a table online.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

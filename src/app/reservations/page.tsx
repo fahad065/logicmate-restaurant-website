@@ -37,10 +37,10 @@ export default function ReservationsPage() {
     const branch = dineInLocations.find((l) => l.id === form.branch);
     return (
       <div className="mx-auto flex max-w-lg flex-col items-center px-5 py-28 text-center sm:px-8">
-        <span className="mb-5 flex size-16 items-center justify-center rounded-full bg-fire/10 text-fire">
+        <span className="mb-5 flex size-16 items-center justify-center rounded-full bg-jade/10 text-jade">
           <CheckCircle2 className="size-8" />
         </span>
-        <h1 className="font-display text-2xl font-bold text-charcoal">
+        <h1 className="font-display text-2xl font-bold text-ink">
           Table request received
         </h1>
         <p className="mt-3 text-foreground/65">
@@ -51,7 +51,7 @@ export default function ReservationsPage() {
         </p>
         <button
           onClick={() => setSubmitted(false)}
-          className="mt-8 rounded-full border border-black/10 px-6 py-2.5 text-sm font-semibold text-charcoal hover:border-fire hover:text-fire"
+          className="mt-8 rounded-full border border-black/10 px-6 py-2.5 text-sm font-semibold text-ink hover:border-jade hover:text-jade"
         >
           Book another table
         </button>
@@ -61,7 +61,7 @@ export default function ReservationsPage() {
 
   return (
     <div>
-      <section className="bg-charcoal py-14 text-center text-cream sm:py-16">
+      <section className="bg-ink py-14 text-center text-cream sm:py-16">
         <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
           <CalendarDays className="size-3.5" /> Reservations
         </span>
@@ -69,7 +69,7 @@ export default function ReservationsPage() {
           Book a table
         </h1>
         <p className="mx-auto mt-3 max-w-xl px-5 text-cream/70">
-          Available at every dine-in branch across Gujarat. We&apos;ll confirm by phone.
+          Available at every dine-in branch across California. We&apos;ll confirm by phone.
         </p>
       </section>
 
@@ -95,7 +95,7 @@ export default function ReservationsPage() {
                 type="tel"
                 value={form.phone}
                 onChange={(e) => update("phone", e.target.value)}
-                placeholder="+91 98765 xxxxx"
+                placeholder="+1 (555) 555-0100"
                 className="input"
               />
             </Field>
@@ -182,7 +182,7 @@ export default function ReservationsPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-full bg-fire py-3 text-sm font-semibold text-cream shadow-lg shadow-fire/30 transition-colors hover:bg-fire-dark disabled:cursor-not-allowed disabled:opacity-60"
+            className="w-full rounded-full bg-jade py-3 text-sm font-semibold text-cream shadow-lg shadow-jade/30 transition-colors hover:bg-jade-dark disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submitting ? "Sending request…" : "Request table"}
           </button>
@@ -205,7 +205,7 @@ export default function ReservationsPage() {
           transition: border-color 0.15s;
         }
         .input:focus {
-          border-color: var(--brand-fire);
+          border-color: var(--brand-jade);
         }
       `}</style>
     </div>
@@ -223,9 +223,9 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block text-sm font-semibold text-charcoal">
+      <span className="mb-1.5 block text-sm font-semibold text-ink">
         {label}
-        {required && <span className="text-fire"> *</span>}
+        {required && <span className="text-jade"> *</span>}
       </span>
       {children}
     </label>

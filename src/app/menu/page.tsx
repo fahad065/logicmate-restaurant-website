@@ -24,8 +24,8 @@ export default function MenuPage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden bg-charcoal py-16 text-cream sm:py-20">
-        <div className="absolute -right-24 -top-24 size-72 rounded-full bg-fire/20 blur-3xl" />
+      <section className="relative overflow-hidden bg-ink py-16 text-cream sm:py-20">
+        <div className="absolute -right-24 -top-24 size-72 rounded-full bg-jade/20 blur-3xl" />
         <div className="relative mx-auto max-w-5xl px-5 text-center sm:px-8">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
             <Flame className="size-3.5" /> Full Menu
@@ -34,8 +34,8 @@ export default function MenuPage() {
             Everything, straight off the wok
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-cream/70">
-            40+ dishes across starters, soups, noodles, fried rice and wok specialties —
-            with a full Jain and vegetarian menu at every branch.
+            40+ dishes across starters, soups, noodles, fried rice and stir-fry
+            specialties — with a full Jain and vegetarian menu at every branch.
           </p>
         </div>
       </section>
@@ -48,8 +48,8 @@ export default function MenuPage() {
               onClick={() => setFilter(f.value)}
               className={`shrink-0 rounded-full border px-4 py-1.5 text-sm font-semibold transition-colors ${
                 filter === f.value
-                  ? "border-fire bg-fire text-cream"
-                  : "border-black/10 bg-white text-foreground/70 hover:border-fire/40 hover:text-fire"
+                  ? "border-jade bg-jade text-cream"
+                  : "border-black/10 bg-white text-foreground/70 hover:border-jade/40 hover:text-jade"
               }`}
             >
               {f.label}
@@ -69,7 +69,7 @@ export default function MenuPage() {
           {categories.map((cat) => (
             <div key={cat.id} id={cat.id}>
               <div className="mb-6 border-b border-black/8 pb-4">
-                <h2 className="font-display text-2xl font-bold text-charcoal sm:text-3xl">
+                <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">
                   {cat.title}
                 </h2>
                 {cat.subtitle && (
@@ -82,16 +82,16 @@ export default function MenuPage() {
                   <div key={item.name} className="flex items-start justify-between gap-4">
                     <div>
                       <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="font-display text-base font-bold text-charcoal">
+                        <h3 className="font-display text-base font-bold text-ink">
                           {item.name}
                         </h3>
                         {item.badge && (
-                          <span className="rounded-full bg-fire/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-fire">
+                          <span className="rounded-full bg-jade/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-jade">
                             {item.badge}
                           </span>
                         )}
                         {item.spicy && (
-                          <span className="flex items-center gap-0.5 text-[11px] text-fire">
+                          <span className="flex items-center gap-0.5 text-[11px] text-jade">
                             {Array.from({ length: item.spicy }).map((_, i) => (
                               <Flame key={i} className="size-3" />
                             ))}
@@ -114,8 +114,8 @@ export default function MenuPage() {
                         {dietLabel[item.diet]}
                       </span>
                     </div>
-                    <span className="shrink-0 font-display text-base font-bold text-fire">
-                      {item.price} AED
+                    <span className="shrink-0 font-display text-base font-bold text-jade">
+                      ${item.price}
                     </span>
                   </div>
                 ))}

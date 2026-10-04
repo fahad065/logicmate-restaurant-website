@@ -1,10 +1,11 @@
-# Wok On Fire — Demo Restaurant Website
+# Canton Kitchen — Demo Restaurant Website
 
-A standalone, frontend-only Next.js demo site built for a live LogicMate chatbot
-demo with a prospective client ("Wok On Fire," a pan-Asian wok-fired restaurant
-chain). **This is not a real business** — content, menu, locations, phone
-numbers and quotes are illustrative, built to look like a real, live restaurant
-site for demo purposes only.
+A standalone, frontend-only Next.js demo site built for LogicMate's own
+marketing demo video showing how a chatbot widget gets added to a restaurant
+website. **This is a fictional brand** — content, menu, locations, phone
+numbers and quotes are all invented, built to look like a real, live
+restaurant site for demo purposes only. It is not based on, and carries no
+identifying details of, any real business.
 
 ## Stack
 
@@ -28,7 +29,7 @@ Visit `http://localhost:3000`.
 
 - `/` — Home
 - `/menu` — Full categorized menu (40+ dishes, diet filters: Veg / Non-Veg / Vegan / Jain)
-- `/locations` — All 13 branches (Dubai cloud kitchen + 12 Gujarat dine-in locations), filterable by city
+- `/locations` — All 13 branches (LA cloud kitchen + 12 California dine-in locations), filterable by city
 - `/about` — Brand story, values, timeline
 - `/reservations` — Table booking request form (mock submit)
 - `/contact` — Contact form (mock submit)
@@ -52,5 +53,6 @@ page needs to change.
 - Images are hotlinked from Unsplash and gracefully fall back to a branded
   gradient placeholder (`src/components/safe-img.tsx`) if a URL ever fails to
   load — verify these render correctly on the machine you're demoing from.
-- All menu items, prices (AED), locations, addresses and phone numbers are
-  fabricated for demo purposes.
+- All menu items, prices (USD), locations, addresses and phone numbers are
+  fabricated for demo purposes. Phone numbers use the `555` prefix reserved
+  for fictional use.

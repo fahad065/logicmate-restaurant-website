@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffaf3;
-  --foreground: #241a12;
+  --background: #f7f8f6;
+  --foreground: #151b18;
 
-  --brand-fire: #e0451c;
-  --brand-fire-dark: #b5330f;
-  --brand-dark: #1c130d;
-  --brand-dark-soft: #2a1e15;
-  --brand-gold: #d6a24a;
-  --brand-cream: #fffaf3;
-  --brand-cream-soft: #fbf1e2;
+  --brand-jade: #0e7a5c;
+  --brand-jade-dark: #0a5d45;
+  --brand-ink: #13201c;
+  --brand-ink-soft: #1d2b25;
+  --brand-gold: #c9a227;
+  --brand-cream: #f7f8f6;
+  --brand-cream-soft: #edf1ec;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-fire: var(--brand-fire);
-  --color-fire-dark: var(--brand-fire-dark);
-  --color-charcoal: var(--brand-dark);
-  --color-charcoal-soft: var(--brand-dark-soft);
+  --color-jade: var(--brand-jade);
+  --color-jade-dark: var(--brand-jade-dark);
+  --color-ink: var(--brand-ink);
+  --color-ink-soft: var(--brand-ink-soft);
   --color-gold: var(--brand-gold);
   --color-cream: var(--brand-cream);
   --color-cream-soft: var(--brand-cream-soft);
@@ -40,11 +40,11 @@ body {
   font-family: var(--font-display);
 }
 
-@keyframes flicker {
+@keyframes pulse-badge {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.82; }
 }
 
-.animate-flicker {
-  animation: flicker 2.4s ease-in-out infinite;
+.animate-pulse-badge {
+  animation: pulse-badge 2.4s ease-in-out infinite;
 }

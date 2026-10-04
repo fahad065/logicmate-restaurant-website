@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Flame, Menu, X, Phone } from "lucide-react";
+import { ChefHat, Menu, X, Phone } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -19,14 +19,14 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-charcoal text-cream">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-ink text-cream">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="flex size-9 items-center justify-center rounded-full bg-fire text-cream">
-            <Flame className="size-5" />
+          <span className="flex size-9 items-center justify-center rounded-full bg-jade text-cream">
+            <ChefHat className="size-5" />
           </span>
           <span className="font-display text-xl font-bold tracking-wide">
-            Wok On Fire
+            Canton Kitchen
           </span>
         </Link>
 
@@ -49,14 +49,14 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="tel:+97145550192"
+            href="tel:+12135550142"
             className="flex items-center gap-1.5 text-sm text-cream/80 hover:text-gold"
           >
             <Phone className="size-3.5" /> Call Nearest Branch
           </a>
           <Link
             href="/reservations"
-            className="rounded-full bg-fire px-5 py-2 text-sm font-semibold text-cream shadow-sm shadow-fire/40 transition-colors hover:bg-fire-dark"
+            className="rounded-full bg-jade px-5 py-2 text-sm font-semibold text-cream shadow-sm shadow-jade/40 transition-colors hover:bg-jade-dark"
           >
             Book a Table
           </Link>
@@ -72,7 +72,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-cream/10 bg-charcoal px-5 py-4 md:hidden">
+        <div className="border-t border-cream/10 bg-ink px-5 py-4 md:hidden">
           <nav className="flex flex-col gap-3.5">
             {NAV_LINKS.map((link) => (
               <Link
@@ -89,7 +89,7 @@ export function Navbar() {
             <Link
               href="/reservations"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-fire px-5 py-2.5 text-center text-sm font-semibold text-cream"
+              className="mt-2 rounded-full bg-jade px-5 py-2.5 text-center text-sm font-semibold text-cream"
             >
               Book a Table
             </Link>
