@@ -4,6 +4,7 @@ import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { readChatbotEmbed } from "@/lib/chatbot-embed";
 
 const body = Geist({
   variable: "--font-body",
@@ -23,38 +24,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  // See README.md — paste your real embed snippet, exactly as copied
+  // from the chatbot's Channels → Website tab, into chatbot-embed.local.txt
+  // at the project root (gitignored, never committed). Nothing to edit
+  // here: this reads that file and renders the two real <script> tags
+  // JSX needs, so there's no JSX/dangerouslySetInnerHTML to deal with.
+  const { inlineScript, widgetSrc } = readChatbotEmbed();
+
   return (
     <html lang="en" className={`${body.variable} ${display.variable} h-full`}>
       <head>
-        {/* ============================================================
-            LogicMate chatbot widget — paste the <script> snippet from
-            your chatbot's Channels → Website tab here, right before
-            </head>. On a plain HTML page, WordPress, Shopify, Wix,
-            Squarespace, or any non-React site, paste it in exactly as
-            copied — it works immediately, no changes needed.
-
-            This demo site is built with Next.js/React, which has one
-            React-specific quirk: a raw <script>...</script> tag with a
-            JS object body can't be pasted as literal JSX children,
-            because JSX parses { and } as an embedded expression rather
-            than text, and React throws "Objects are not valid as a
-            React child" if you try. This is NOT something real
-            customers hit — it only applies here because this demo
-            happens to be a React app. To paste your real snippet here,
-            wrap just the inline <script> in dangerouslySetInnerHTML:
-
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.LMChatbot = { embedKey: "YOUR_EMBED_KEY", ... };
-                `,
-              }}
-            />
-            <script src="https://YOUR-FRONTEND-DOMAIN/chatbot-widget.js" async></script>
-
-            Keep your real embedKey and config out of version control —
-            paste it locally for the recording, don't commit it.
-           ============================================================ */}
+        {inlineScript && <script dangerouslySetInnerHTML={{ __html: inlineScript }} />}
+        {widgetSrc && <script src={widgetSrc} async />}
       </head>
       <body className="flex min-h-full flex-col bg-cream font-sans text-[15px] text-foreground antialiased">
         <Navbar />

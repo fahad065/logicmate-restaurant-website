@@ -36,17 +36,24 @@ Visit `http://localhost:3000`.
 
 ## Adding the LogicMate chatbot widget
 
-Open `src/app/layout.tsx` and find the commented placeholder inside `<head>`.
-Paste the `<script>` snippet from your chatbot's **Channels → Website** tab
-right there — it self-injects a floating chat bubble, nothing else on the
-page needs to change.
+1. Copy `chatbot-embed.local.example.txt` to a new file named
+   `chatbot-embed.local.txt`, in this same folder (the project root).
+2. Copy the embed snippet from your chatbot's **Channels → Website** tab in
+   the LogicMate dashboard, and paste it into that file — replacing the
+   placeholder, exactly as copied. No code to edit, no quotes to escape.
+3. Save, then (re)start `npm run dev`.
 
-```tsx
-<script>
-  window.LMChatbot = { embedKey: "YOUR_EMBED_KEY", ... };
-</script>
-<script src="https://YOUR-FRONTEND-DOMAIN/chatbot-widget.js" async></script>
-```
+`chatbot-embed.local.txt` is gitignored, so your real embed key never gets
+committed. `src/app/layout.tsx` reads this file and renders the widget for
+every page automatically — nothing else to touch.
+
+(If you're wiring the same embed snippet into a *different* site that's
+also built in React, Next.js, or Vue, you'll need to paste it the way those
+frameworks expect raw inline `<script>` content — e.g. React's
+`dangerouslySetInnerHTML` or Next's `next/script` — the same thing true of
+any third-party script tag, not specific to this widget. Plain HTML,
+WordPress, Shopify, Wix, and Squarespace sites need zero changes; paste the
+snippet in as copied.)
 
 ## Notes
 
