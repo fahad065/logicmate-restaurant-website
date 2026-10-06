@@ -39,7 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# real chatbot embed config for local demos — paste your own snippet here,
-# never commit it (see chatbot-embed.local.example.txt / README.md)
-/chatbot-embed.local.txt

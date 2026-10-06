@@ -4,7 +4,6 @@ import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { readChatbotEmbed } from "@/lib/chatbot-embed";
 
 const body = Geist({
   variable: "--font-body",
@@ -24,18 +23,25 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  // See README.md — paste your real embed snippet, exactly as copied
-  // from the chatbot's Channels → Website tab, into chatbot-embed.local.txt
-  // at the project root (gitignored, never committed). Nothing to edit
-  // here: this reads that file and renders the two real <script> tags
-  // JSX needs, so there's no JSX/dangerouslySetInnerHTML to deal with.
-  const { inlineScript, widgetSrc } = readChatbotEmbed();
-
   return (
     <html lang="en" className={`${body.variable} ${display.variable} h-full`}>
       <head>
-        {inlineScript && <script dangerouslySetInnerHTML={{ __html: inlineScript }} />}
-        {widgetSrc && <script src={widgetSrc} async />}
+        {/*
+          LogicMate Chatbot Widget — paste your embed code here, exactly as
+          copied from the chatbot's Channels → Website tab in the dashboard.
+          It's a single, self-closing <script> tag with no inline code, so
+          it pastes directly as JSX with nothing to edit, no
+          dangerouslySetInnerHTML, no escaping — paste it right below this
+          comment and it just works:
+
+          <script
+            src="http://localhost:3000/chatbot-widget.js"
+            data-embed-key="YOUR_EMBED_KEY"
+            data-api-url="http://localhost:4000/api/v1"
+            data-color="#7c3aed"
+            async
+          />
+        */}
       </head>
       <body className="flex min-h-full flex-col bg-cream font-sans text-[15px] text-foreground antialiased">
         <Navbar />

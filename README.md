@@ -36,24 +36,19 @@ Visit `http://localhost:3000`.
 
 ## Adding the LogicMate chatbot widget
 
-1. Copy `chatbot-embed.local.example.txt` to a new file named
-   `chatbot-embed.local.txt`, in this same folder (the project root).
-2. Copy the embed snippet from your chatbot's **Channels → Website** tab in
-   the LogicMate dashboard, and paste it into that file — replacing the
-   placeholder, exactly as copied. No code to edit, no quotes to escape.
+1. Copy the embed snippet from your chatbot's **Channels → Website** tab in
+   the LogicMate dashboard.
+2. Open `src/app/layout.tsx` and paste it directly inside `<head>`, right
+   below the comment that marks the spot — exactly as copied, no edits.
 3. Save, then (re)start `npm run dev`.
 
-`chatbot-embed.local.txt` is gitignored, so your real embed key never gets
-committed. `src/app/layout.tsx` reads this file and renders the widget for
-every page automatically — nothing else to touch.
-
-(If you're wiring the same embed snippet into a *different* site that's
-also built in React, Next.js, or Vue, you'll need to paste it the way those
-frameworks expect raw inline `<script>` content — e.g. React's
-`dangerouslySetInnerHTML` or Next's `next/script` — the same thing true of
-any third-party script tag, not specific to this widget. Plain HTML,
-WordPress, Shopify, Wix, and Squarespace sites need zero changes; paste the
-snippet in as copied.)
+The snippet is a single, self-closing `<script>` tag with no inline code —
+just `src` plus a few `data-*` attributes — so it pastes straight into JSX
+as-is. There's no object literal or script body for Next.js/React/Vue's
+compiler to choke on, so this works identically whether you're pasting it
+into this Next.js file's JSX, a plain HTML page's `<head>`, or any other
+site builder (WordPress, Shopify, Wix, Squarespace) — same snippet, no
+framework-specific syntax, nothing to adapt.
 
 ## Notes
 
