@@ -23,7 +23,9 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:3000`.
+Visit `http://localhost:3002`. Pinned to port 3002 (not Next's default 3000)
+so it never collides with the LogicMate frontend, which runs on 3000 — handy
+when running both side by side, e.g. to demo the chatbot widget.
 
 ## Pages
 
