@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function SafeImg({
   src,
@@ -12,6 +12,12 @@ export function SafeImg({
   className?: string;
 }) {
   const [failed, setFailed] = useState(false);
+  const ref = useRef<HTMLImageElement>(null);
+  // A photo that failed before the page's JavaScript was ready never fires onError.
+  useEffect(() => {
+    const el = ref.current;
+    if (el && el.complete && el.naturalWidth === 0) setFailed(true);
+  }, [src]);
 
   if (failed) {
     return (
@@ -25,6 +31,7 @@ export function SafeImg({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
+      ref={ref}
       src={src}
       alt={alt}
       className={className}
